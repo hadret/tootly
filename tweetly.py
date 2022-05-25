@@ -9,7 +9,6 @@ import sqlite3
 
 db_file = "tweetly.db"
 feed_url = "https://chabik.com/feed.xml"
-# today = date.today().strftime("%Y%m%d")
 today = date.today()
 
 
