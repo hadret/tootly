@@ -1,8 +1,11 @@
 # Tweetly
 
-## Setup
+## Python Setup
 
 ```shell
-pipenv install bitlyshortener tweepy
+pipenv install beautifulsoup4 bitlyshortener lxml requests tweepy
 pipenv lock -r > requirements.txt
 ```
+
+## SQLite
+
