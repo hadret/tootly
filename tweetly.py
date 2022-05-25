@@ -12,7 +12,7 @@ feed_url = "https://chabik.com/feed.xml"
 today = date.today()
 
 
-def parse_feed():
+def parse_feed() -> tuple:
     """Fetch latest post from the RSS feed."""
     feed = requests.get(feed_url)
 
@@ -28,7 +28,7 @@ def parse_feed():
         raise SystemExit("Feed couldn't be reached!")
 
 
-def db_prepare():
+def db_prepare() -> None:
     """Prepare database and table."""
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
@@ -40,7 +40,7 @@ def db_prepare():
     conn.close()
 
 
-def db_insert_data(date, title, link):
+def db_insert_data(date: date, title: str, link: str) -> None:
     """Insert data into tables, create DB if needed."""
     db_prepare()
     conn = sqlite3.connect(db_file)
@@ -50,7 +50,7 @@ def db_insert_data(date, title, link):
     conn.close()
 
 
-def db_check_last_record():
+def db_check_last_record() -> date:
     """Check date of the latest record in the DB."""
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
@@ -61,7 +61,7 @@ def db_check_last_record():
     return result
 
 
-def debug_values(date, title, link):
+def debug_values(date: date, title: str, link: str):
     print(date)
     print(type(date))
     print(title)
