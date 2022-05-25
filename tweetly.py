@@ -55,9 +55,8 @@ def db_check_last_record():
     conn = sqlite3.connect(db_file)
     c = conn.cursor()
     c.execute("SELECT date FROM tweetly ORDER BY date DESC LIMIT 1")
-    result_tuple = c.fetchone()
-    result = "".join(str(column) for column in result_tuple)
-    result = datetime.strptime(result, "%Y-%m-%d").date()
+    result = c.fetchone()
+    result = datetime.strptime(result[0], "%Y-%m-%d").date()
     conn.close()
     return result
 
