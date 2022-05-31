@@ -9,6 +9,9 @@ tweepy = "*"
 beautifulsoup4 = "*"
 lxml = "*"
 requests = "*"
+sqlalchemy = "*"
+pydantic = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
