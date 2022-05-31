@@ -2,5 +2,6 @@ __pycache__/
 *.py[cod]
 *.class
 *.db
+.env
 .venv
 pyrightconfig.json
