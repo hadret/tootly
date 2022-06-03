@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Boolean, create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from config import get_settings
@@ -15,3 +15,6 @@ class Tweet(Base):
     date = Column(String, unique=True, index=True)
     title = Column(String, unique=True, index=True)
     link = Column(String, index=True)
+    short_link = Column(String, unique=True, index=True)
+    admin_link = Column(String, unique=True, index=True)
+    is_published = Column(Boolean, default=False)
