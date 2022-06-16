@@ -57,3 +57,4 @@ if __name__ == "__main__":
     (post_title, post_date, post_link) = parse_feed()
     db_insert_data(post_date, post_title, post_link)
     # publish_tweet()
+    print("Job well done!")
