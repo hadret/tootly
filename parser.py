@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime, date
 from config import get_settings
+from datetime import date, datetime
 
 feed_url = get_settings().feed_url
 

@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from database import Base, SessionLocal, Tweet, engine
 from datetime import date
-from sqlalchemy.sql.sqltypes import Boolean
-from database import Base, engine, SessionLocal, Tweet
 from parser import parse_feed
 from shorty import get_short_link
+from sqlalchemy.sql.sqltypes import Boolean
 from tweet import create_tweet
 
 Base.metadata.create_all(bind=engine)
