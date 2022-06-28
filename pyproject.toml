@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "autotweetly"
+version = "1.0.2"
+description = "Auto-tweeting latest posts on my blog"
+authors = ["Filip Chabik <hadret@hey.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tweepy = "^4.10.0"
+beautifulsoup4 = "^4.11.1"
+lxml = "^4.9.0"
+requests = "^2.28.0"
+SQLAlchemy = "^1.4.39"
+pydantic = "^1.9.1"
+python-dotenv = "^0.20.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
