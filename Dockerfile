@@ -2,9 +2,10 @@
 FROM python:3.10-slim
 LABEL org.opencontainers.image.source https://github.com/hadret/tweetly
 
-WORKDIR /usr/src/app
+WORKDIR /code
 
-COPY . .
+COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+COPY ./tweetly /code/app
 
-CMD ["python", "main.py"]
+CMD ["python", "app/main.py"]
