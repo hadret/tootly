@@ -16,7 +16,7 @@ def parse_feed() -> tuple[str, date, str]:
         post_title = latest_post.find("title").text
         post_link = latest_post.find("link").text
         post_date = latest_post.find("pubDate").text
-        post_date = datetime.strptime(post_date[:-6], "%a, %d %b %Y %H:%M:%S").date()
+        post_date = datetime.strptime(post_date, "%a, %d %b %Y %H:%M:%S %Z").date()
         return post_title, post_date, post_link
     else:
         raise SystemExit("Feed couldn't be reached!")
