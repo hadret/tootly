@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "autotweetly"
-version = "1.0.2"
+version = "1.2.2"
 description = "Auto-tweeting latest posts on my blog"
-authors = ["Filip Chabik <hadret@hey.com>"]
+authors = ["Filip Chabik <hadret@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
