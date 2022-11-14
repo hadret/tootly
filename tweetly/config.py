@@ -11,6 +11,8 @@ class Settings(BaseSettings):
     consumer_secret: str = ""
     access_token: str = ""
     access_token_secret: str = ""
+    mastodon_url: str = "https://fosstodon.org"
+    mastodon_token: str = ""
 
     class Config:
         env_file = ".env"

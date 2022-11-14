@@ -7,6 +7,7 @@ from parser import parse_feed
 from shorty import get_short_link
 from sqlalchemy.sql.sqltypes import Boolean
 from tweet import create_tweet
+from toot import create_toot
 
 Base.metadata.create_all(bind=engine)
 
@@ -53,8 +54,21 @@ def publish_tweet() -> None:
             session.commit()
 
 
+def publish_toot() -> None:
+    """Toot with title and short_link"""
+    with SessionLocal() as session:
+        query = session.query(Tweet).filter(Tweet.is_tooted.is_(False)).first()
+        if query:
+            text = query.title, query.short_link
+            text = " ".join(text)
+            create_toot(text)
+            query.is_tooted = True
+            session.commit()
+
+
 if __name__ == "__main__":
     (post_title, post_date, post_link) = parse_feed()
     db_insert_data(post_date, post_title, post_link)
-    publish_tweet()
+    # publish_tweet()
+    publish_toot()
     print("Job well done!")

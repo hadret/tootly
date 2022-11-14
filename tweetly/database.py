@@ -18,3 +18,4 @@ class Tweet(Base):
     short_link = Column(String, unique=True, index=True)
     admin_link = Column(String, unique=True, index=True)
     is_published = Column(Boolean, default=False)
+    is_tooted = Column(Boolean, default=False)
