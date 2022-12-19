@@ -1,13 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from database import Base, SessionLocal, Tweet, engine
 from datetime import date
 from parser import parse_feed
+
+from database import Base, SessionLocal, Tweet, engine
 from shorty import get_short_link
 from sqlalchemy.sql.sqltypes import Boolean
-from tweet import create_tweet
 from toot import create_toot
+from tweet import create_tweet
 
 Base.metadata.create_all(bind=engine)
 
@@ -69,6 +70,6 @@ def publish_toot() -> None:
 if __name__ == "__main__":
     (post_title, post_date, post_link) = parse_feed()
     db_insert_data(post_date, post_title, post_link)
-    # publish_tweet()
+    publish_tweet()
     publish_toot()
     print("Job well done!")
