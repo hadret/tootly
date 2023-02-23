@@ -8,8 +8,8 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 
-class Tweet(Base):
-    __tablename__ = "tweets"
+class Toot(Base):
+    __tablename__ = "toots"
 
     id = Column(Integer, primary_key=True)
     date = Column(String, unique=True, index=True)
@@ -17,5 +17,4 @@ class Tweet(Base):
     link = Column(String, index=True)
     short_link = Column(String, unique=True, index=True)
     admin_link = Column(String, unique=True, index=True)
-    is_published = Column(Boolean, default=False)
     is_tooted = Column(Boolean, default=False)

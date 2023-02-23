@@ -1,13 +1,12 @@
 [tool.poetry]
-name = "autotweetly"
-version = "1.3.0"
-description = "Auto-tweeting latest posts on my blog"
+name = "tootly"
+version = "1.4.0"
+description = "Auto-tooting latest posts on my blog"
 authors = ["Filip Chabik <hadret@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-tweepy = "^4.10.0"
 beautifulsoup4 = "^4.11.1"
 lxml = "^4.9.0"
 requests = "^2.28.0"
