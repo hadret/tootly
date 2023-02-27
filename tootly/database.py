@@ -18,3 +18,5 @@ class Toot(Base):
     short_link = Column(String, unique=True, index=True)
     admin_link = Column(String, unique=True, index=True)
     is_tooted = Column(Boolean, default=False)
+    tags = Column(String, index=True)
+    content = Column(String, index=True)
