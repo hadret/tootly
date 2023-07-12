@@ -22,7 +22,9 @@ def parse_feed() -> tuple[str, date, str, str, str]:
         post_date = latest_post.find("pubDate").text
         post_date = datetime.strptime(post_date, "%a, %d %b %Y %H:%M:%S %Z").date()
         post_content = latest_post.find("content:encoded").text
-        post_tags = [f"#{tag}" for tag in tags if re.search(tag, post_content)]
+        post_tags = [
+            f"#{tag}" for tag in tags if re.search(tag, post_content, re.IGNORECASE)
+        ]
         post_tags = " ".join(post_tags[:8])
         post_content = textwrap.shorten(
             BeautifulSoup(post_content, "lxml").text, width=200
