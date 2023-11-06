@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "tootly"
-version = "1.6.1"
+version = "1.6.2"
 description = "Auto-tooting latest posts on my blog"
 authors = ["Filip Chabik <hadret@gmail.com>"]
 license = "MIT"
