@@ -31,4 +31,5 @@ def parse_feed() -> tuple[str, date, str, str, str]:
         )
         return post_title, post_date, post_link, post_tags, post_content
     else:
+        print(feed)
         raise SystemExit("Feed couldn't be reached!")

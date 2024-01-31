@@ -13,4 +13,5 @@ def get_short_link(link: str):
         admin_link = shorty.json()["admin_url"]
         return short_link, admin_link
     else:
-        raise SystemExit("Feed couldn't be reached!")
+        print(shorty)
+        raise SystemExit("Couldn't reach the URL shortener")
