@@ -1,11 +1,14 @@
 # syntax=docker/dockerfile:1
-FROM python:3.12-slim
-LABEL org.opencontainers.image.source https://github.com/hadret/tootly
+FROM ghcr.io/astral-sh/uv:0.5.14-python3.12-bookworm-slim
+LABEL org.opencontainers.image.source=https://github.com/hadret/tootly
+
+ENV UV_PYTHON_DOWNLOADS=never \
+    UV_PYTHON=python3.12
 
 WORKDIR /code
 
-COPY ./requirements.txt /code/requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+COPY pyproject.toml uv.lock /code/
+RUN uv sync --frozen
 COPY ./tootly /code/app
 
-CMD ["python", "app/main.py"]
+CMD ["uv", "run", "app/main.py"]

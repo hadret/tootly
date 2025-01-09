@@ -1,22 +1,21 @@
-[tool.poetry]
+[project]
+authors = [
+    {name = "Filip Chabik", email = "hadret@gmail.com"},
+]
+license = {text = "MIT"}
+requires-python = "<4.0,>=3.12"
+dependencies = [
+    "beautifulsoup4<5.0.0,>=4.11.1",
+    "lxml<5.0.0,>=4.9.0",
+    "requests<3.0.0,>=2.28.0",
+    "SQLAlchemy<2.0.0,>=1.4.39",
+    "pydantic<2.0.0,>=1.9.1",
+    "python-dotenv<1.0.0,>=0.20.0",
+    "mastodon-py<2.0.0,>=1.5.2",
+]
 name = "tootly"
-version = "1.7.1"
-description = "Auto-tooting latest posts on my blog"
-authors = ["Filip Chabik <hadret@gmail.com>"]
-license = "MIT"
+version = "1.8.0"
+description = "Auto-tooting latest posts from my blog"
 
-[tool.poetry.dependencies]
-python = "^3.12"
-beautifulsoup4 = "^4.11.1"
-lxml = "^4.9.0"
-requests = "^2.28.0"
-SQLAlchemy = "^1.4.39"
-pydantic = "^1.9.1"
-python-dotenv = "^0.20.0"
-mastodon-py = "^1.5.2"
-
-[tool.poetry.dev-dependencies]
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = []
