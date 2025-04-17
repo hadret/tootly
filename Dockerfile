@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM ghcr.io/astral-sh/uv:0.5.14-python3.12-bookworm-slim
+FROM ghcr.io/astral-sh/uv:0.6.14-python3.12-bookworm-slim
 LABEL org.opencontainers.image.source=https://github.com/hadret/tootly
 
 ENV UV_PYTHON_DOWNLOADS=never \
