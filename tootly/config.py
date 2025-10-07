@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     feed_url: str = "http://some.feed/url.xml"
     db_url: str = "sqlite:///./tootly.db"
     shorty_url: str = "http://127.0.0.1:8000/url"
+    shorty_api_key: str = ""
     mastodon_url: str = "https://fosstodon.org"
     mastodon_token: str = ""
     tags: list = []
